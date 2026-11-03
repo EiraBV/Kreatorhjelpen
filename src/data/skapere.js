@@ -13,6 +13,18 @@ export const skapere = [
     kategorier: ['Brygging'],
     sisteKontakt: '2026-10-28',
     antallPublisert: 24,
+    epost: 'martin.holm@example.no',
+    telefon: '912 34 567',
+    kanaler: [
+      { plattform: 'Instagram', lenke: 'https://instagram.com/humlemartin' },
+      { plattform: 'YouTube', lenke: 'https://youtube.com/@humlemartin' },
+    ],
+    avtale: 'Ambassadøravtale – 2 innlegg i måneden mot produkter og 10 % provisjon',
+    nesteEvaluering: '2027-01-15',
+    produkterMottatt: [
+      { navn: 'Grainfather G30', dato: '2026-03-12' },
+      { navn: 'Humlepakke – amerikansk IPA', dato: '2026-09-04' },
+    ],
   },
   {
     id: 2,
@@ -23,6 +35,18 @@ export const skapere = [
     kategorier: ['Pizza'],
     sisteKontakt: '2026-10-30',
     antallPublisert: 17,
+    epost: 'ingrid@example.no',
+    telefon: '934 56 781',
+    kanaler: [
+      { plattform: 'Instagram', lenke: 'https://instagram.com/pizzaingrid' },
+      { plattform: 'TikTok', lenke: 'https://tiktok.com/@pizzaingrid' },
+    ],
+    avtale: 'Produktavtale – innhold etter eget ønske, ingen fast frekvens',
+    nesteEvaluering: '2026-12-01',
+    produkterMottatt: [
+      { navn: 'Ooni Koda 16', dato: '2026-04-20' },
+      { navn: 'Pizzastein og spade', dato: '2026-08-11' },
+    ],
   },
   {
     id: 3,
@@ -33,6 +57,12 @@ export const skapere = [
     kategorier: ['BBQ'],
     sisteKontakt: '2026-10-21',
     antallPublisert: 3,
+    epost: 'jonas.berg@example.no',
+    telefon: '958 12 340',
+    kanaler: [{ plattform: 'Facebook', lenke: 'https://facebook.com/roykjonas' }],
+    avtale: 'Prøveperiode i 3 måneder – 1 innlegg per produkt',
+    nesteEvaluering: '2026-11-20',
+    produkterMottatt: [{ navn: 'Røykeflis – hickory', dato: '2026-09-28' }],
   },
   {
     id: 4,
@@ -43,6 +73,19 @@ export const skapere = [
     kategorier: ['Brygging', 'BBQ'],
     sisteKontakt: '2026-10-15',
     antallPublisert: 31,
+    epost: 'sara@maltsara.example.no',
+    telefon: '976 54 321',
+    kanaler: [
+      { plattform: 'Blogg', lenke: 'https://maltsara.example.no' },
+      { plattform: 'Instagram', lenke: 'https://instagram.com/maltsara' },
+    ],
+    avtale: 'Ambassadøravtale – 1 artikkel i måneden og rabattkode',
+    nesteEvaluering: '2027-02-01',
+    produkterMottatt: [
+      { navn: 'Gjæringsbøtte med tappekran', dato: '2026-02-03' },
+      { navn: 'Maltkvern', dato: '2026-06-17' },
+      { navn: 'Termometer for grill', dato: '2026-09-22' },
+    ],
   },
   {
     id: 5,
@@ -53,6 +96,12 @@ export const skapere = [
     kategorier: ['Pizza', 'BBQ'],
     sisteKontakt: '2026-07-02',
     antallPublisert: 9,
+    epost: 'erik.nygard@example.no',
+    telefon: '481 23 456',
+    kanaler: [{ plattform: 'YouTube', lenke: 'https://youtube.com/@steinovnen' }],
+    avtale: 'Avtale satt på pause etter eget ønske',
+    nesteEvaluering: '2027-01-10',
+    produkterMottatt: [{ navn: 'Pizzaovn – vedfyrt', dato: '2025-11-14' }],
   },
   {
     id: 6,
@@ -63,5 +112,14 @@ export const skapere = [
     kategorier: ['Brygging', 'Pizza'],
     sisteKontakt: '2026-11-01',
     antallPublisert: 2,
+    epost: 'nora.dahl@example.no',
+    telefon: '402 98 765',
+    kanaler: [
+      { plattform: 'TikTok', lenke: 'https://tiktok.com/@gjaernora' },
+      { plattform: 'Instagram', lenke: 'https://instagram.com/gjaernora' },
+    ],
+    avtale: 'Prøveperiode i 3 måneder – 2 videoer per måned',
+    nesteEvaluering: '2027-01-05',
+    produkterMottatt: [{ navn: 'Startpakke for hjemmebrygging', dato: '2026-10-10' }],
   },
 ]

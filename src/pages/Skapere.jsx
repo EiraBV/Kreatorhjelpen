@@ -1,9 +1,11 @@
 import { useState } from 'react'
 import SideTittel from '../components/SideTittel.jsx'
 import SkaperKort from '../components/SkaperKort.jsx'
-import { KATEGORIER, skapere } from '../data/skapere.js'
+import { KATEGORIER } from '../data/skapere.js'
+import { useData } from '../data/useData.js'
 
 function Skapere() {
+  const { skapere } = useData()
   const [sok, setSok] = useState('')
   const [kategori, setKategori] = useState('Alle')
 
