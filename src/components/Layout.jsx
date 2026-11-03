@@ -1,4 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom'
+import Idehjelper from './idehjelper/Idehjelper.jsx'
 
 const lenker = [
   { til: '/', tekst: 'Oversikt', end: true },
@@ -38,6 +39,7 @@ function Layout() {
       <main className="flex-1 px-4 py-8 md:px-10 md:py-10">
         <Outlet />
       </main>
+      <Idehjelper />
     </div>
   )
 }

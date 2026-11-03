@@ -5,19 +5,13 @@ import KategoriFilter from '../components/KategoriFilter.jsx'
 import SideTittel from '../components/SideTittel.jsx'
 import Sokefelt from '../components/Sokefelt.jsx'
 import { primaerKnapp } from '../components/stil.js'
-import { ideer as startIdeer } from '../data/ideer.js'
 import { ekstraIdeer } from '../data/ekstraIdeer.js'
 import { useData } from '../data/useData.js'
-import { useLokalTilstand } from '../utils/useLokalTilstand.js'
 
 const ANTALL_NYE = 4
 
-const startTilstand = () =>
-  startIdeer.map((i) => ({ ...i, lagret: false, skjult: false, ny: false }))
-
 function Idebank() {
-  const { skapere } = useData()
-  const [ideer, setIdeer] = useLokalTilstand('kreatorhjelpen.idebank.v1', startTilstand)
+  const { skapere, ideer, setIdeer } = useData()
   const [kategori, setKategori] = useState('Alle')
   const [sok, setSok] = useState('')
   const [fane, setFane] = useState('alle')
