@@ -1,0 +1,18 @@
+// Hentes inn fire om gangen når man trykker «Generer flere ideer».
+export const ekstraIdeer = [
+  { id: 101, tittel: 'Slik velger du riktig humle', kategori: 'Brygging', beskrivelse: 'Sammenlign aroma og bitterhet i tre populære humlesorter, med lukt og utseende i fokus.', anbefaltFormat: 'TikTok', kilde: 'AI', tildeltSkaperId: null },
+  { id: 102, tittel: 'Napoletansk vs. romersk pizza', kategori: 'Pizza', beskrivelse: 'Forklar forskjellene i deig, steketid og bunn. Lag begge og la seerne stemme.', anbefaltFormat: 'YouTube-video', kilde: 'AI', tildeltSkaperId: null },
+  { id: 103, tittel: 'Pulled pork for nybegynnere', kategori: 'BBQ', beskrivelse: 'En trygg første oppskrift i røykovn, med tips om krydderblanding og hvile.', anbefaltFormat: 'YouTube-video', kilde: 'AI', tildeltSkaperId: null },
+  { id: 104, tittel: 'Utstyrsguide: dette trenger du for å starte', kategori: 'Brygging', beskrivelse: 'Gå gjennom en startpakke del for del og forklar hva hver ting brukes til.', anbefaltFormat: 'Story/Reel', kilde: 'AI', tildeltSkaperId: null },
+  { id: 105, tittel: 'Surdeigspizza over to døgn', kategori: 'Pizza', beskrivelse: 'Dokumenter kaldheving fra dag til dag og vis hva tiden gjør med smak og struktur.', anbefaltFormat: 'Story/Reel', kilde: 'AI', tildeltSkaperId: null },
+  { id: 106, tittel: 'Tre marinader til sommerens grillfest', kategori: 'BBQ', beskrivelse: 'Raske oppskrifter med ingredienser fra kjøleskapet. Vis resultatet på grillen.', anbefaltFormat: 'TikTok', kilde: 'AI', tildeltSkaperId: null },
+  { id: 107, tittel: 'Vannets betydning i brygging', kategori: 'Brygging', beskrivelse: 'Forklar hvordan mineraler i vannet påvirker resultatet, med enkle målinger hjemme.', anbefaltFormat: 'YouTube-video', kilde: 'AI', tildeltSkaperId: null },
+  { id: 108, tittel: 'Pizzaovn-test: vedfyrt mot gass', kategori: 'Pizza', beskrivelse: 'Samme pizza i to ovner. Sammenlign oppvarmingstid, smak og hvor enkelt det er.', anbefaltFormat: 'YouTube-video', kilde: 'AI', tildeltSkaperId: null },
+  { id: 109, tittel: 'Grilling om vinteren', kategori: 'BBQ', beskrivelse: 'Tips til å holde jevn temperatur i kulda, og hvilke retter som passer best.', anbefaltFormat: 'Story/Reel', kilde: 'AI', tildeltSkaperId: null },
+  { id: 110, tittel: 'Fra korn til malt', kategori: 'Brygging', beskrivelse: 'Vis hvordan malting fungerer og hvorfor ulike malttyper gir ulik farge.', anbefaltFormat: 'TikTok', kilde: 'AI', tildeltSkaperId: null },
+  { id: 111, tittel: 'Dessertpizza med sesongens bær', kategori: 'Pizza', beskrivelse: 'Søt vri på pizzakvelden. Kort oppskrift med tydelige nærbilder.', anbefaltFormat: 'TikTok', kilde: 'AI', tildeltSkaperId: null },
+  { id: 112, tittel: 'Slik bruker du et steketermometer', kategori: 'BBQ', beskrivelse: 'Kjernetemperaturer for ulike typer kjøtt, og vanlige feil ved måling.', anbefaltFormat: 'Story/Reel', kilde: 'AI', tildeltSkaperId: null },
+  { id: 113, tittel: 'Alkoholfritt alternativ: hjemmelaget ingefærøl', kategori: 'Brygging', beskrivelse: 'Gjæret leskedrikk med samme utstyr som til ølbrygging. God inngang for et bredere publikum.', anbefaltFormat: 'Story/Reel', kilde: 'AI', tildeltSkaperId: null },
+  { id: 114, tittel: 'Pizzadeig med glutenfritt mel', kategori: 'Pizza', beskrivelse: 'Test av to glutenfrie melblandinger og hvordan de oppfører seg i steinovn.', anbefaltFormat: 'YouTube-video', kilde: 'AI', tildeltSkaperId: null },
+  { id: 115, tittel: 'Grønnsaker på grillen', kategori: 'BBQ', beskrivelse: 'Fem vegetarretter som får røyksmak, med fokus på tilbehør og servering.', anbefaltFormat: 'TikTok', kilde: 'AI', tildeltSkaperId: null },
+]
