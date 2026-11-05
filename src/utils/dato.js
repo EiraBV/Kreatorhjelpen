@@ -22,9 +22,35 @@ export function iDag() {
   return `${d.getFullYear()}-${mnd}-${dag}`
 }
 
+const langDatoFormat = new Intl.DateTimeFormat('nb-NO', {
+  day: 'numeric',
+  month: 'long',
+  year: 'numeric',
+})
+
+export function formaterLangDato(iso) {
+  return langDatoFormat.format(tilDato(iso))
+}
+
+export function antallDagerSiden(iso) {
+  return Math.round((tilDato(iDag()) - tilDato(iso)) / 86_400_000)
+}
+
 export function dagerSiden(iso) {
-  const dager = Math.round((tilDato(iDag()) - tilDato(iso)) / 86_400_000)
+  const dager = antallDagerSiden(iso)
   if (dager === 0) return 'i dag'
   if (dager === 1) return 'i går'
   return `${dager} dager siden`
+}
+
+const maanedFormat = new Intl.DateTimeFormat('nb-NO', { month: 'long' })
+
+// «2.–8. november», eller «27. oktober–2. november» når uken går over to måneder.
+export function formaterUkeSpenn(startIso, sluttIso) {
+  const start = tilDato(startIso)
+  const slutt = tilDato(sluttIso)
+  const mnd = (d) => maanedFormat.format(d)
+  return start.getMonth() === slutt.getMonth()
+    ? `${start.getDate()}.–${slutt.getDate()}. ${mnd(slutt)}`
+    : `${start.getDate()}. ${mnd(start)}–${slutt.getDate()}. ${mnd(slutt)}`
 }
