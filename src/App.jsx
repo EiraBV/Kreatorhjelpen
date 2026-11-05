@@ -4,6 +4,7 @@ import Oversikt from './pages/Oversikt.jsx'
 import Skapere from './pages/Skapere.jsx'
 import SkaperProfil from './pages/SkaperProfil.jsx'
 import Idebank from './pages/Idebank.jsx'
+import Ukesrapport from './pages/Ukesrapport.jsx'
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route path="skapere" element={<Skapere />} />
         <Route path="skapere/:id" element={<SkaperProfil />} />
         <Route path="idebank" element={<Idebank />} />
+        <Route path="ukesrapport" element={<Ukesrapport />} />
         <Route path="*" element={<Navigate to="/" replace />} />
       </Route>
     </Routes>

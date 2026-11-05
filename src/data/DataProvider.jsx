@@ -11,11 +11,11 @@ import { useLokalTilstand } from '../utils/useLokalTilstand.js'
 const startIdebank = () =>
   startIdeer.map((i) => ({ ...i, lagret: false, skjult: false, ny: false }))
 
-// Falsk database: tilstanden lever i minnet og nullstilles ved omlasting,
-// bortsett fra Idébanken, som lagres i localStorage.
+// Falsk database. Skapere, notater og Idébanken lagres i localStorage;
+// innhold lever bare i minnet og nullstilles ved omlasting.
 function DataProvider({ children }) {
-  const [skapere, setSkapere] = useState(startSkapere)
-  const [notater, setNotater] = useState(startNotater)
+  const [skapere, setSkapere] = useLokalTilstand('kreatorhjelpen.skapere.v1', startSkapere)
+  const [notater, setNotater] = useLokalTilstand('kreatorhjelpen.notater.v1', startNotater)
   const [innhold, setInnhold] = useState(startInnhold)
   const [ideer, setIdeer] = useLokalTilstand('kreatorhjelpen.idebank.v1', startIdebank)
 

@@ -18,8 +18,28 @@ const startMelding = {
   tekst: 'Hei! 👋 Har du en idé du vil finpusse? Beskriv den kort, så hjelper jeg deg å gjøre den konkret.',
 }
 
+// Vanlige innledninger som ikke hører hjemme i en tittel. Fjernes gjentatte
+// ganger, så «Kanskje man skal lage …» blir «Lage …».
+const INNLEDNINGER = [
+  /^jeg har (en|ei) id[eé] (om|til)( at)?\s+/i,
+  /^hva med\s+/i,
+  /^kanskje\s+/i,
+  /^man skal\s+/i,
+]
+
+function fjernInnledninger(tekst) {
+  let rest = tekst
+  let forrige
+  do {
+    forrige = rest
+    for (const innledning of INNLEDNINGER) rest = rest.replace(innledning, '')
+    rest = rest.replace(/^[\s,.:;–-]+/, '')
+  } while (rest !== forrige)
+  return rest || tekst
+}
+
 function lagTittel(tekst) {
-  const ord = tekst.trim().split(/\s+/)
+  const ord = fjernInnledninger(tekst.trim()).split(/\s+/)
   const tittel = ord.slice(0, 6).join(' ').replace(/[.,!?;:]+$/, '')
   const medStorBokstav = tittel.charAt(0).toUpperCase() + tittel.slice(1)
   return ord.length > 6 ? `${medStorBokstav} …` : medStorBokstav
@@ -107,8 +127,20 @@ function Idehjelper() {
     }
   }
 
+  // Oppdaterer både utkastet som lagres og kortet som vises i chatten.
+  function endreTittel(meldingId, tittel) {
+    setUtkast((u) => ({ ...u, ide: { ...u.ide, tittel } }))
+    setMeldinger((liste) =>
+      liste.map((m) =>
+        m.id === meldingId ? { ...m, oppsummering: { ...m.oppsummering, tittel } } : m,
+      ),
+    )
+  }
+
   function lagre() {
-    leggTilIde({ ...utkast.ide, id: Date.now(), lagret: true, skjult: false, ny: true })
+    const tittel = utkast.ide.tittel.trim()
+    if (!tittel) return
+    leggTilIde({ ...utkast.ide, tittel, id: Date.now(), lagret: true, skjult: false, ny: true })
     brukerSier('Lagre i Idébanken')
     botSier([{ tekst: 'Lagret! Du finner den under Lagrede i Idébanken.' }], 'lagret')
   }
@@ -165,6 +197,7 @@ function Idehjelper() {
                   ide={m.oppsummering}
                   skaperNavn={skaperNavn(m.oppsummering.tildeltSkaperId)}
                   visKnapper={steg === 'oppsummering' && !skriver}
+                  onEndreTittel={(tittel) => endreTittel(m.id, tittel)}
                   onLagre={lagre}
                   onStartPaaNytt={startPaaNytt}
                 />

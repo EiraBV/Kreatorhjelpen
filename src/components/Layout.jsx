@@ -5,6 +5,7 @@ const lenker = [
   { til: '/', tekst: 'Oversikt', end: true },
   { til: '/skapere', tekst: 'Skapere' },
   { til: '/idebank', tekst: 'Idébank' },
+  { til: '/ukesrapport', tekst: 'Ukesrapport' },
 ]
 
 function Layout() {
@@ -24,7 +25,7 @@ function Layout() {
               to={l.til}
               end={l.end}
               className={({ isActive }) =>
-                `rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
+                `flex items-center gap-2 rounded-md px-3 py-2 text-sm font-medium whitespace-nowrap transition-colors ${
                   isActive
                     ? 'bg-bark-700 text-cream-50'
                     : 'text-bark-300 hover:bg-bark-800 hover:text-cream-50'

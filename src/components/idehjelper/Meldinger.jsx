@@ -1,3 +1,4 @@
+import { BlyantIkon } from '../Ikoner.jsx'
 import { Merke } from '../Merker.jsx'
 import { primaerKnapp, sekundaerKnapp } from '../stil.js'
 
@@ -51,10 +52,30 @@ export function Hurtigsvar({ valg, onVelg }) {
   )
 }
 
-export function OppsummeringKort({ ide, skaperNavn, visKnapper, onLagre, onStartPaaNytt }) {
+export function OppsummeringKort({
+  ide,
+  skaperNavn,
+  visKnapper,
+  onEndreTittel,
+  onLagre,
+  onStartPaaNytt,
+}) {
   return (
     <div className="mr-6 rounded-xl border border-cream-300 bg-cream-50 p-4 shadow-sm">
-      <p className="font-serif text-base leading-snug font-semibold">{ide.tittel}</p>
+      {visKnapper ? (
+        <div className="relative">
+          <input
+            value={ide.tittel}
+            onChange={(e) => onEndreTittel(e.target.value)}
+            aria-label="Tittel"
+            placeholder="Skriv en tittel"
+            className="w-full rounded-lg border border-cream-300 bg-cream-100 py-1.5 pr-8 pl-2.5 font-serif text-base font-semibold placeholder:font-sans placeholder:text-sm placeholder:font-normal placeholder:text-bark-300 focus:border-malt-500 focus:ring-2 focus:ring-malt-500/30 focus:outline-none"
+          />
+          <BlyantIkon className="pointer-events-none absolute top-1/2 right-2.5 size-3.5 -translate-y-1/2 text-bark-700" />
+        </div>
+      ) : (
+        <p className="font-serif text-base leading-snug font-semibold">{ide.tittel}</p>
+      )}
       <div className="mt-2">
         <Merke>{ide.kategori}</Merke>
       </div>
@@ -71,7 +92,12 @@ export function OppsummeringKort({ ide, skaperNavn, visKnapper, onLagre, onStart
       <p className="mt-3 border-t border-cream-200 pt-3 text-sm leading-relaxed">{ide.beskrivelse}</p>
       {visKnapper && (
         <div className="mt-4 flex flex-wrap gap-2">
-          <button type="button" onClick={onLagre} className={primaerKnapp}>
+          <button
+            type="button"
+            onClick={onLagre}
+            disabled={!ide.tittel.trim()}
+            className={primaerKnapp}
+          >
             Lagre i Idébanken
           </button>
           <button type="button" onClick={onStartPaaNytt} className={sekundaerKnapp}>
